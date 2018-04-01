@@ -1,5 +1,5 @@
 from collections import OrderedDict
-from typing import AnyStr, Generator
+from typing import AnyStr, List
 
 from requests_html import HTMLSession
 
@@ -8,7 +8,7 @@ from utils import cleanup_text
 session = HTMLSession()
 
 
-def do_scrap_askfm(username: AnyStr) -> Generator[OrderedDict]:
+def do_scrap_askfm(username: AnyStr) -> List[OrderedDict]:
 
     def scrap_list_qna(content):
         item_page = content.find('div.item-page', first=True)

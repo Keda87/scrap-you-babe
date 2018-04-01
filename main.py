@@ -19,9 +19,7 @@ async def scrap_askfm(request):
         message = 'Username is required.'
         response = render_error_response(message=message)
         return json(response, status=400)
-    username = request.json.get('username')
     scrap_result = do_scrap_askfm(username=username)
-    do_scrap_askfm(username=1)
     response = render_success_response(result=scrap_result)
     return json(response)
 
